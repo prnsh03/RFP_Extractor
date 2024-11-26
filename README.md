@@ -119,7 +119,7 @@ pip install -r requirements.txt
 - **Database connection issues**: Verify that `pgvector` is enabled in PostgreSQL.
 
 ## Contact
-S PRANESH \n
-+91 6383007285\n
-21btrcl085@jainuniversity.ac.in\n
-Jain University, Bangalore \n
+S PRANESH <br>
++91 6383007285<br>
+21btrcl085@jainuniversity.ac.in<br>
+Jain University, Bangalore <br>
