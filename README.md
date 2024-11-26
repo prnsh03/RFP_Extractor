@@ -29,7 +29,8 @@ Ensure you have the following installed and configured:
 Install required libraries using:
 ```bash
 pip install -r requirements.txt
-PostgreSQL Configuration
+
+### PostgreSQL Configuration
 Create Database: Set up a PostgreSQL database (e.g., rfp_extractor).
 Enable pgvector: Run the following command in your PostgreSQL database:
 sql
