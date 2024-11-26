@@ -31,26 +31,24 @@ Install required libraries using:
 pip install -r requirements.txt
 ```
 ### PostgreSQL Configuration
-Create Database: Set up a PostgreSQL database (e.g., rfp_extractor).
-Enable pgvector: Run the following command in your PostgreSQL database:
-sql
-Copy code
+1. Create Database: Set up a PostgreSQL database (e.g., rfp_extractor).
+2. Enable ```pgvector```: Run the following command in your PostgreSQL database:
+```
 CREATE EXTENSION IF NOT EXISTS vector;
-Environment Variables
+```
+
+## Environment Variables
 Create a .env file in the root directory with the following content:
 
-plaintext
-Copy code
+```
 OPENAI_API_KEY=your_openai_api_key
 DATABASE_URL=postgresql://username:password@localhost:5432/rfp_extractor
 HUGGINGFACE_TOKEN=your_huggingface_token
-Replace your_openai_api_key, username, password, and your_huggingface_token with actual values.
+```
+Replace   `openai_api_key` , `username`, `password`, and `huggingface_token` with actual values.
 
-Directory Structure
-The project directory is organized as follows:
-
-plaintext
-Copy code
+## Directory Structure
+```
 .
 ├── Documents/                # Input folder containing RFP documents
 │   ├── Bid1/
@@ -59,29 +57,26 @@ Copy code
 │   ├── Bid2/
 │       ├── file3.pdf
 │       ├── file4.html
-├── extractors/               # Extractor scripts for PDFs and HTMLs
-│   ├── pdf_extractor.py
-│   ├── html_extractor.py
-│   ├── preprocess.py
-├── main.py                   # Main script to execute the workflow
+├── rfp_extractor.py          # Single script to execute the workflow
 ├── structured_data.json      # Final structured JSON output
 ├── requirements.txt          # List of Python dependencies
 ├── README.md                 # Project documentation
-Running the Project
-Steps to Execute
-Start PostgreSQL: Ensure your database server is running and accessible.
-Run the main script:
-bash
-Copy code
-python main.py
-Workflow Overview
-1. Extract and Preprocess Data
-Reads PDF and HTML files from the Documents directory.
-Extracts text using extract_text_from_pdf and extract_text_from_html functions.
-Cleans and preprocesses text using preprocess_text for better embedding generation.
-2. Create Embeddings
-Converts preprocessed text into vector embeddings using OpenAI's text-embedding-ada-002 model.
-3. Ingest Embeddings
+```
+## Running the Project
+### Steps to Execute
+1. **Start PostgreSQL**: Ensure your database server is running and accessible.
+2. **Run the main script:**
+```
+python rfp_extractor.py
+```
+## Workflow Overview
+### 1. Extract and Preprocess Data
+* Reads PDF and HTML files from the Documents directory.
+* Extracts text using *extract_text_from_pdf* and *extract_text_from_html* functions.
+* Cleans and preprocesses text using preprocess_text for better embedding generation.
+### 2. Create Embeddings
+* Converts preprocessed text into vector embeddings using OpenAI's *text-embedding-ada-002 model*.
+### 3. Ingest Embeddings
 Stores embeddings in a PostgreSQL database table (embeddings) with pgvector for efficient similarity search.
 4. Semantic Search
 Performs a dummy semantic search (can be enhanced for custom needs) to retrieve relevant embeddings.
