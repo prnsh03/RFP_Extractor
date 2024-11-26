@@ -1,8 +1,8 @@
-# RFP Extractor Project
+# Emplay Analytics - Technical Assessment
 
 Thank you for the opportunity to work on this project. It has been a rewarding learning experience!
 
-## RFP Extractor Objective
+## Objective
 
 This project leverages advanced AI and NLP techniques, including OpenAI embeddings and a Llama-based semantic mapping system, to extract, preprocess, and structure information from Request for Proposal (RFP) documents (PDFs and HTMLs). The output is a structured JSON file containing the key fields from the RFPs, designed for ease of analysis and integration into other systems.
 
@@ -27,9 +27,9 @@ Ensure you have the following installed and configured:
 ### Python Libraries
 
 Install required libraries using:
-```bash
+```
 pip install -r requirements.txt
-
+```
 ### PostgreSQL Configuration
 Create Database: Set up a PostgreSQL database (e.g., rfp_extractor).
 Enable pgvector: Run the following command in your PostgreSQL database:
