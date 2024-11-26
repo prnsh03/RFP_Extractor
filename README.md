@@ -13,7 +13,7 @@ This project leverages advanced AI and NLP techniques, including OpenAI embeddin
 - **OpenAI embeddings**: Utilizes `text-embedding-ada-002` for semantic representation.
 - **PostgreSQL integration**: Embeddings are stored in a PostgreSQL database using the `pgvector` extension.
 - **Llama-based mapping**: Maps extracted text to predefined fields using a Hugging Face Llama model.
-- **Semantic search**: Enables intelligent mapping of embeddings to structured data fields.
+- **Semantic Search with Cosine Similarity**: Finds the most relevant sections of the documents for mapping.
 - **JSON export**: Outputs the final structured data as `structured_data.json`.
 
 ## Requirements
@@ -79,11 +79,11 @@ python rfp_extractor.py
 ### 3. Ingest Embeddings
 * Stores embeddings in a PostgreSQL database table (`embeddings`) with `pgvector` for efficient similarity search.
 ### 4. Semantic Search
-* Performs a dummy semantic search (can be enhanced for custom needs) to retrieve relevant embeddings.
+* Uses cosine similarity to retrieve the most relevant text snippets for mapping to predefined fields.
 ### 5. Map to Structured Fields
-Maps the retrieved search results to 20 predefined fields using a pre-trained Llama model and tokenizer.
+* Maps the retrieved search results to 20 predefined fields using a pre-trained Llama model and tokenizer.
 ### 6. Export to JSON
-Saves the mapped structured data as `structured_data.json` in the root directory.
+* Saves the mapped structured data as `structured_data.json` in the root directory.
 
 ## Predefined Fields
 The extracted content is mapped to the following fields:
@@ -117,6 +117,11 @@ pip install -r requirements.txt
 ```
 - **403 Error from Hugging Face**: Ensure you have requested access to the required Llama model and your Hugging Face token is valid.
 - **Database connection issues**: Verify that `pgvector` is enabled in PostgreSQL.
+
+## Other Models Tried:
+1. Using Vertex AI API (for creating embeddings)
+2. Using pgvector and Llama (Using pgvector to create embeddings and storing in Postgresql , finally mapping it with fields using Llama indexing)
+3. Used 
 
 ## Contact
 S PRANESH <br>
