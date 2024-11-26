@@ -116,10 +116,10 @@ Product Specification
 pip install -r requirements.txt
 ```
 - **403 Error from Hugging Face**: Ensure you have requested access to the required Llama model and your Hugging Face token is valid.
-- **Database connection issues**: Verify that `pgvector` is enabled in PostgreSQL and credentials in the `.env` file are correct.
+- **Database connection issues**: Verify that `pgvector` is enabled in PostgreSQL.
 
 ## Contact
-S PRANESH 
-+91 6383007285
-21btrcl085@jainuniversity.ac.in
-Jain University, Bangalore 
+S PRANESH \n
++91 6383007285\n
+21btrcl085@jainuniversity.ac.in\n
+Jain University, Bangalore \n
