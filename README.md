@@ -1,6 +1,6 @@
 # Emplay Analytics - Technical Assessment
 
-Thank you for the opportunity to work on this project. It has been a rewarding learning experience!
+It has been a rewarding learning experience, Thank you for the opportunity!
 
 ## Objective
 
@@ -118,10 +118,10 @@ pip install -r requirements.txt
 - **403 Error from Hugging Face**: Ensure you have requested access to the required Llama model and your Hugging Face token is valid.
 - **Database connection issues**: Verify that `pgvector` is enabled in PostgreSQL.
 
-## Other Models Tried:
+## Other Models Tried Before:
 1. Using Vertex AI API (for creating embeddings)
 2. Using pgvector and Llama (Using pgvector to create embeddings and storing in Postgresql , finally mapping it with fields using Llama indexing)
-3. Used 
+3. Used DistilBERT model for text embeddings.
 
 ## Contact
 S PRANESH <br>
