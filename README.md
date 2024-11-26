@@ -72,53 +72,54 @@ python rfp_extractor.py
 ## Workflow Overview
 ### 1. Extract and Preprocess Data
 * Reads PDF and HTML files from the Documents directory.
-* Extracts text using *extract_text_from_pdf* and *extract_text_from_html* functions.
+* Extracts text using `extract_text_from_pdf` and `extract_text_from_html` functions.
 * Cleans and preprocesses text using preprocess_text for better embedding generation.
 ### 2. Create Embeddings
-* Converts preprocessed text into vector embeddings using OpenAI's *text-embedding-ada-002 model*.
+* Converts preprocessed text into vector embeddings using OpenAI's `text-embedding-ada-002 model`.
 ### 3. Ingest Embeddings
-Stores embeddings in a PostgreSQL database table (embeddings) with pgvector for efficient similarity search.
-4. Semantic Search
-Performs a dummy semantic search (can be enhanced for custom needs) to retrieve relevant embeddings.
-5. Map to Structured Fields
+* Stores embeddings in a PostgreSQL database table (`embeddings`) with `pgvector` for efficient similarity search.
+### 4. Semantic Search
+* Performs a dummy semantic search (can be enhanced for custom needs) to retrieve relevant embeddings.
+### 5. Map to Structured Fields
 Maps the retrieved search results to 20 predefined fields using a pre-trained Llama model and tokenizer.
-6. Export to JSON
-Saves the mapped structured data as structured_data.json in the root directory.
-Predefined Fields
+### 6. Export to JSON
+Saves the mapped structured data as `structured_data.json` in the root directory.
+
+## Predefined Fields
 The extracted content is mapped to the following fields:
-
+```
+Bid Number
 Title
-Author
-Date
-Company
-Executive Summary
-Scope
-Requirements
-Assumptions
-Risks
-Pricing
-Schedule
-Deliverables
-Terms and Conditions
-Attachments
-References
-Metrics
-Stakeholders
-Contact Information
-Approval
-Notes
-Troubleshooting
-Common Issues
-ModuleNotFoundError: Ensure all dependencies are installed using:
-bash
-Copy code
+Due Date
+Bid Submission Type
+Term of Bid
+Pre Bid Meeting
+Installation
+Bid Bond Requirement
+Delivery Date
+Payment Terms
+Any Additional Documentation Required
+MFG for Registration
+Contract or Cooperative to Use
+Model_no
+Part_no
+Product
+Contact_info
+Company_name
+Bid Summary
+Product Specification
+```
+## Troubleshooting
+### Common Issues
+- **ModuleNotFoundError**: Ensure all dependencies are installed using:
+```
 pip install -r requirements.txt
-403 Error from Hugging Face: Ensure you have requested access to the required Llama model and your Hugging Face token is valid.
-Database connection issues: Verify that pgvector is enabled in PostgreSQL and credentials in the .env file are correct.
-Logs
-Detailed logs are printed to the console for debugging purposes.
+```
+- **403 Error from Hugging Face**: Ensure you have requested access to the required Llama model and your Hugging Face token is valid.
+- **Database connection issues**: Verify that `pgvector` is enabled in PostgreSQL and credentials in the `.env` file are correct.
 
-Contact
-S. Pranesh
+## Contact
+S PRANESH 
 +91 6383007285
-Jain University, Bangalore - 620016
+21btrcl085@jainuniversity.ac.in
+Jain University, Bangalore 
