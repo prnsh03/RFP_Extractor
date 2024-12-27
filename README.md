@@ -1,6 +1,4 @@
-# Emplay Analytics - Technical Assessment
-
-It has been a rewarding learning experience, Thank you for the opportunity!
+# Emplay Analytics - Project
 
 ## Objective
 
